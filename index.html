@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <section>
+        <header>
+            <a href="#"><img src="logo.png" class="logo"></a>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#" onclick="showPopup('membershippopup')">Membership</a></li>
+                <li><a href="#" onclick="showPopup('registerPopup')">Register</a></li>
+                <li><a href="#" onclick="showPopup('loginPopup')">Login</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </header>
+        <div class="content">
+            <div class="textbox">
+                <h2>Welcome To Our E-Library<br><span>The Ultimate Search Engine ADCET</span></h2>
+                <p>The ADCET central Library is one of the biggest and well-equipped libraries in Maharashtra. Library has a strong collection of reading material including Books, Bound Volumes of Periodicals, dissertations and non-print material such as E-Books, E-Journals, CDs, and NPTEL Video Lectures. The Library is fully computerized using Vidyasagar v4.0 LMS and provides Web OPAC and OPAC Mobile App facility to all readers. ‘This library offers total OPEN ACCESS to all readers.’ Central Library has an excellent digital library Section and provides access to E-resources.</p>
+                <div class="imgbox">
+                    <img src="library4.jpg" class="library">
+                    <img src="library2.jpg" class="library">
+                    <img src="library1.jpg" class="library">
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="content" id="about">
+        <div class="about-us-info">
+        <h2>About Us</h2>
+        <p>
+            At our library system, we're dedicated to fostering a vibrant community of readers and learners. With a diverse collection of books, digital resources, and engaging programs, we strive to empower individuals of all ages to explore, discover, and grow. Our knowledgeable staff is committed to providing a welcoming environment, promoting literacy, and facilitating lifelong learning. Join us on a journey of intellectual exploration and community connection, where the love of books and knowledge thrives. Welcome to a place where curiosity knows no bounds.</p>
+      </div>
+      <div class="content" id="contact">
+        <div class="contact-info">
+        <h2>Contact Us</h2>
+        <p>Have questions or need assistance? Contact our friendly team for personalized support.</p>
+        <div class="contact-info">
+          <p>Email: info@adcet.com</p>
+          <p>Phone: +91 123-456-7890</p>
+        </div>
+      </div>
+     
+      <div class="popup" id="loginPopup">
+        <span class="popup-close" onclick="hidePopup('loginPopup')">X</span>
+        <h2>Login</h2>
+        <label for="loginEmail">Email:</label>
+        <input type="email" id="loginEmail" name="loginEmail" required>
+    
+        <label for="loginPassword">Password:</label>
+        <input type="password" id="loginPassword" name="loginPassword" required>
+    
+        <button onclick="hidePopup('loginPopup')">Login</button>
+      </div>
+
+    <div class="popup" id="registerPopup">
+        <span class="popup-close" onclick="hidePopup('registerPopup')">X</span>
+        <h2>Register</h2>
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" required>
+    
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+    
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+    
+        <button onclick="hidePopup('registerPopup')">Register</button>
+      </div>
+
+    <div id="membershippopup" class="popup">
+            <span class="popup-close" onclick="hidePopup('membershippopup')">&times;</span>
+            <h2>Membership</h2>
+           
+            <form action="process-library-membership.php" method="post">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+        
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+        
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required>
+        
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" rows="3" required></textarea>
+        
+                <label for="membership-type">Membership Type:</label>
+                <select id="membership-type" name="membership-type" required>
+                    <option value="student">Student</option>
+                    <option value="faculty">Faculty</option>
+                    <option value="community">Community</option>
+                </select>
+        
+                <label>
+                    <input type="checkbox" id="agree" name="agree" required>
+                    I agree to the terms and conditions
+                </label>
+        
+                <button type="submit">Submit</button>
+            </form>
+    </div>
+
+    <script>
+       function showPopup(popupId) {
+      document.getElementById(popupId).style.display = 'block';
+    }
+
+    function hidePopup(popupId) {
+      document.getElementById(popupId).style.display = 'none';
+    }
+    </script>
+
+</body>
+</html>
